@@ -29,9 +29,6 @@ public class Address {
     @Column(name = "uf")
     private String uf;
 
-    @OneToOne(mappedBy = "address")
-    private Employee employee;
-
     public String getCep() {
         return cep;
     }
