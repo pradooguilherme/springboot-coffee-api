@@ -5,7 +5,6 @@ import jakarta.persistence.Entity;
 import jakarta.persistence.Table;
 
 @Entity
-@Table(name = "bar_products")
 public class BarProduct extends Product {
 
     @Column(name = "bar_product_final_price")
