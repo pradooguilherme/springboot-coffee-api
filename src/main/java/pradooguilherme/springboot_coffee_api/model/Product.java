@@ -9,7 +9,7 @@ public class Product {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     @Column(name = "product_code")
-    private String code;
+    private Long code;
 
     @Column(name = "product_name")
     private String name;
@@ -20,11 +20,11 @@ public class Product {
     @Column(name = "product_price")
     private Double price;
 
-    public String getCode() {
+    public Long getCode() {
         return code;
     }
 
-    public void setCode(String code) {
+    public void setCode(Long code) {
         this.code = code;
     }
 
