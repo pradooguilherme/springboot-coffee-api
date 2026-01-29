@@ -1,9 +1,14 @@
 # springboot-coffee-api
 A REST API for coffee shop management using Spring Boot, JPA, PostgreSQL
 
-flowchart LR
-  A[Client/Swagger] --> B[Controller]
+## Architecture Overview
+
+### Sequence and Layers
+
+```mermaid
+flowchart TD
+  A[Client] --> B[Controller]
   B --> C[Service]
   C --> D[Repository]
-  D --> E[(Database)]
+  D --> DB[(PostgreSQL)]
 
