@@ -1,8 +1,6 @@
 package pradooguilherme.springboot_coffee_api.model;
 
-import jakarta.persistence.Column;
-import jakarta.persistence.Entity;
-import jakarta.persistence.Table;
+import jakarta.persistence.*;
 
 @Entity
 public class BarProduct extends Product {
@@ -10,6 +8,7 @@ public class BarProduct extends Product {
     @Column(name = "bar_product_final_price")
     private Double finalPrice;
 
+    @Enumerated(EnumType.STRING)
     @Column(name = "bar_product_size")
     private BarProductSize barProductSize;
 
