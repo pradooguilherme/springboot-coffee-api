@@ -1,8 +1,11 @@
 package pradooguilherme.springboot_coffee_api.controller;
 
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
+import pradooguilherme.springboot_coffee_api.dto.CreateProductBaseRequest;
+import pradooguilherme.springboot_coffee_api.dto.CreateProductRequest;
 import pradooguilherme.springboot_coffee_api.model.Product;
 import pradooguilherme.springboot_coffee_api.service.ProductService;
 
@@ -24,9 +27,10 @@ public class ProductRestController {
     }
 
     @PostMapping
-    public ResponseEntity<Product> createProduct(@RequestBody Product product){
-        productService.insert(product);
-        return ResponseEntity.ok(product);
+    @ResponseStatus(HttpStatus.CREATED)
+    public ResponseEntity<CreateProductBaseRequest> createProduct(@RequestBody CreateProductBaseRequest request){
+        productService.insert(request);
+        return ResponseEntity.ok(request);
     }
 
     @PutMapping("/{id}")
